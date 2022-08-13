@@ -13,6 +13,8 @@
 		FFE6C7CA28A82BD70039531B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE6C7C828A82BD70039531B /* Main.storyboard */; };
 		FFE6C7CC28A82BDD0039531B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE6C7CB28A82BDD0039531B /* Assets.xcassets */; };
 		FFE6C7CF28A82BDD0039531B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE6C7CD28A82BDD0039531B /* LaunchScreen.storyboard */; };
+		FFE6C7DE28A82D190039531B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE6C7DD28A82D190039531B /* Timer.swift */; };
+		FFE6C7E128A830D10039531B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE6C7E028A830D10039531B /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		FFE6C7CB28A82BDD0039531B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFE6C7CE28A82BDD0039531B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFE6C7D028A82BDD0039531B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFE6C7DD28A82D190039531B /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		FFE6C7E028A830D10039531B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,65 @@
 		FFE6C7C128A82BD70039531B /* WeatherAstroTimer */ = {
 			isa = PBXGroup;
 			children = (
-				FFE6C7C228A82BD70039531B /* AppDelegate.swift */,
-				FFE6C7C428A82BD70039531B /* SceneDelegate.swift */,
-				FFE6C7C628A82BD70039531B /* ViewController.swift */,
-				FFE6C7C828A82BD70039531B /* Main.storyboard */,
-				FFE6C7CB28A82BDD0039531B /* Assets.xcassets */,
-				FFE6C7CD28A82BDD0039531B /* LaunchScreen.storyboard */,
-				FFE6C7D028A82BDD0039531B /* Info.plist */,
+				FFE6C7DA28A82CE00039531B /* ViewControllers */,
+				FFE6C7DF28A82D2A0039531B /* Models */,
+				FFE6C7E228A830DB0039531B /* Services */,
+				FFE6C7D728A82C5C0039531B /* Storyboards */,
+				FFE6C7D628A82C420039531B /* App */,
+				FFE6C7D828A82C6E0039531B /* Resourses */,
 			);
 			path = WeatherAstroTimer;
+			sourceTree = "<group>";
+		};
+		FFE6C7D628A82C420039531B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FFE6C7C228A82BD70039531B /* AppDelegate.swift */,
+				FFE6C7C428A82BD70039531B /* SceneDelegate.swift */,
+				FFE6C7D028A82BDD0039531B /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FFE6C7D728A82C5C0039531B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FFE6C7C828A82BD70039531B /* Main.storyboard */,
+				FFE6C7CD28A82BDD0039531B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FFE6C7D828A82C6E0039531B /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				FFE6C7CB28A82BDD0039531B /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		FFE6C7DA28A82CE00039531B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFE6C7C628A82BD70039531B /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FFE6C7DF28A82D2A0039531B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FFE6C7DD28A82D190039531B /* Timer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FFE6C7E228A830DB0039531B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FFE6C7E028A830D10039531B /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +194,9 @@
 			files = (
 				FFE6C7C728A82BD70039531B /* ViewController.swift in Sources */,
 				FFE6C7C328A82BD70039531B /* AppDelegate.swift in Sources */,
+				FFE6C7E128A830D10039531B /* NetworkManager.swift in Sources */,
 				FFE6C7C528A82BD70039531B /* SceneDelegate.swift in Sources */,
+				FFE6C7DE28A82D190039531B /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
