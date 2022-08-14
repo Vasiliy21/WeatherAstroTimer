@@ -9,8 +9,11 @@ import UIKit
 
 class ShowViewController: UIViewController {
 
+    @IBOutlet var descriptionLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        descriptionLabel.text = "Показывает какой будет прогноз \n через время, которое выбрали"
     }
 
 }
