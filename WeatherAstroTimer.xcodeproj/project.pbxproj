@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FFA152CA28ABF03E0052FF9E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FFA152C928ABF03E0052FF9E /* Alamofire */; };
 		FFE6C7C328A82BD70039531B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE6C7C228A82BD70039531B /* AppDelegate.swift */; };
 		FFE6C7C528A82BD70039531B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE6C7C428A82BD70039531B /* SceneDelegate.swift */; };
 		FFE6C7CA28A82BD70039531B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE6C7C828A82BD70039531B /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA152CA28ABF03E0052FF9E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +142,9 @@
 			dependencies = (
 			);
 			name = WeatherAstroTimer;
+			packageProductDependencies = (
+				FFA152C928ABF03E0052FF9E /* Alamofire */,
+			);
 			productName = WeatherAstroTimer;
 			productReference = FFE6C7BF28A82BD70039531B /* WeatherAstroTimer.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +173,9 @@
 				Base,
 			);
 			mainGroup = FFE6C7B628A82BD70039531B;
+			packageReferences = (
+				FFA152C828ABF03E0052FF9E /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = FFE6C7C028A82BD70039531B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -418,6 +426,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FFA152C828ABF03E0052FF9E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FFA152C928ABF03E0052FF9E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFA152C828ABF03E0052FF9E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FFE6C7B728A82BD70039531B /* Project object */;
 }
