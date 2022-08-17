@@ -22,26 +22,26 @@ class NetworkManager {
 
     private init() {}
 
-    func fetchTimer(from url: String?, completion: @escaping(Result<[Timer],NetworkError>) -> Void) {
-        guard let url = URL(string: url ?? "") else {
-            completion(.failure(.invalidURL))
-            return
-        }
-
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
-            guard let data = data else {
-                completion(.failure(.noData))
-                return
-            }
-            do {
-                let timer = try JSONDecoder().decode([Timer].self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(timer))
-                }
-            } catch {
-                completion(.failure(.decodingError))
-            }
-        }.resume()
-    }
+//    func fetchTimer(from url: String?, completion: @escaping(Result<Timer,NetworkError>) -> Void) {
+//        guard let url = URL(string: url ?? "") else {
+//            completion(.failure(.invalidURL))
+//            return
+//        }
+//
+//        URLSession.shared.dataTask(with: url) { (data, _, error) in
+//            guard let data = data else {
+//                completion(.failure(.noData))
+//                return
+//            }
+//            do {
+//                let timer = try JSONDecoder().decode(Timer.self, from: data)
+//                DispatchQueue.main.async {
+//                    completion(.success(timer))
+//                }
+//            } catch {
+//                completion(.failure(.decodingError))
+//            }
+//        }.resume()
+//    }
 }
 

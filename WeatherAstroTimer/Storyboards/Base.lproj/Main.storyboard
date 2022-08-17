@@ -16,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="97" translatesAutoresizingMaskIntoConstraints="NO" id="JFY-zr-HdJ">
-                                <rect key="frame" x="16" y="94" width="382" height="722"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="89" translatesAutoresizingMaskIntoConstraints="NO" id="JFY-zr-HdJ">
+                                <rect key="frame" x="26" y="94" width="362" height="689.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2e-o5-ZY4">
-                                        <rect key="frame" x="32.5" y="0.0" width="317" height="224"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="362" height="207"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8Z-gb-G1R">
-                                                <rect key="frame" x="134.5" y="100" width="48" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Прогноз погоды" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8Z-gb-G1R">
+                                                <rect key="frame" x="106" y="91.5" width="150.5" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -41,13 +41,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <pickerView contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="Y6d-R3-t8n">
-                                        <rect key="frame" x="31" y="321" width="320" height="221"/>
+                                        <rect key="frame" x="0.0" y="296" width="362" height="216"/>
                                     </pickerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9zb-Ie-v8L">
-                                        <rect key="frame" x="16.5" y="639" width="349" height="83"/>
+                                        <rect key="frame" x="0.0" y="601" width="362" height="88.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5B-LA-mF6">
-                                                <rect key="frame" x="0.0" y="0.0" width="349" height="47"/>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5B-LA-mF6">
+                                                <rect key="frame" x="36" y="0.0" width="290" height="52.5"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -64,7 +64,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kw-7S-dPG">
-                                                <rect key="frame" x="114.5" y="52" width="120" height="31"/>
+                                                <rect key="frame" x="121" y="57.5" width="120" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Как работает?"/>
                                                 <connections>
@@ -75,21 +75,23 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="R5B-LA-mF6" firstAttribute="width" secondItem="r2e-o5-ZY4" secondAttribute="width" multiplier="1.1" id="TKJ-8K-9Oy"/>
+                                    <constraint firstItem="R5B-LA-mF6" firstAttribute="width" secondItem="r2e-o5-ZY4" secondAttribute="width" multiplier="0.8" id="dBp-3g-IjN"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JFY-zr-HdJ" secondAttribute="bottom" constant="46" id="6s6-1S-fqF"/>
-                            <constraint firstItem="JFY-zr-HdJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9f5-JF-YEa"/>
-                            <constraint firstItem="JFY-zr-HdJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.922705" id="O8f-af-zz5"/>
-                            <constraint firstItem="JFY-zr-HdJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="PvR-wQ-oTu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JFY-zr-HdJ" secondAttribute="trailing" constant="26" id="632-XT-L9J"/>
+                            <constraint firstItem="JFY-zr-HdJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qn0-6K-M8g"/>
+                            <constraint firstItem="JFY-zr-HdJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="cse-QO-0cm"/>
+                            <constraint firstItem="JFY-zr-HdJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="e6b-iG-r49"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JFY-zr-HdJ" secondAttribute="bottom" multiplier="1.1" id="xen-BP-cxa"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="weatherLabel" destination="a8Z-gb-G1R" id="9hR-Iy-68I"/>
+                        <outlet property="weatherPiker" destination="Y6d-R3-t8n" id="JCM-DR-ebb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

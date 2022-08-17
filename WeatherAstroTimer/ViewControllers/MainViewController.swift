@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainViewController: UIViewController{
 
     @IBOutlet var weatherLabel: UILabel!
+    @IBOutlet var weatherPiker: UIPickerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchTimer()
+        fetchTimerAF()
     }
 
     private var astroTimer: [Timer] = []
@@ -71,17 +73,27 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 extension MainViewController {
-    private func fetchTimer() {
-        NetworkManager.shared.fetchTimer(from: Link.timerURL.rawValue) { [weak self] result in
-            switch result {
-            case .success(let timer):
-                self?.astroTimer.append(contentsOf: timer)
-                self?.successAlert()
-            case .failure(let error):
-                print(error)
+    private func fetchTimerAF() {
+        AF.request(Link.timerURL.rawValue)
+            .validate()
+            .responseJSON { [weak self] dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    guard let timersData = value as? [[String: Any]] else { return }
+                    for timerData in timersData {
+                        let timer = Timer(
+                            product: timerData["product"] as? String ?? "",
+                            dataseries: timerData["dataseries"] as? [DataSeries] ?? [DataSeries(timepoint: 0, cloudcover: 0, seeing: 0, wind10m: WindSpeed.init(direction: "", speed: 0), temp2m: 0)]
+                        )
+                        self?.astroTimer.append(timer)
+                        print(self?.astroTimer ?? "")
+                    }
+                    self?.successAlert()
+                case .failure(let error):
+                    print(error)
+                }
                 self?.failedAlert()
             }
-        }
     }
 }
 

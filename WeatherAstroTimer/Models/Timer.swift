@@ -5,17 +5,17 @@
 //  Created by Vasiliy on 13.08.2022.
 //
 
-struct Timer: Decodable {
+struct Timer {
     let product: String
     let dataseries: [DataSeries]
 }
 
 
-struct DataSeries: Decodable {
+struct DataSeries {
     let timepoint: Int
     let cloudcover: Int
     let seeing: Int
-    let wind10m: [WindSpeed]
+    let wind10m: WindSpeed
     let temp2m: Int
 
 
@@ -25,12 +25,20 @@ struct DataSeries: Decodable {
         Температура: \(temp2m)
         Облачность: \(cloudcover)
         Видимость: \(seeing)
-        Скорость ветра: \(wind10m)
+        Скорость ветра: 
         """
     }
 }
 
-struct WindSpeed: Decodable {
+struct WindSpeed {
     let direction: String
     let speed: Int
 }
+
+//enum Direction: String, Codable {
+//    case s = "S"
+//    case se = "SE"
+//    case sw = "SW"
+//    case w =  "W"
+//}
+
