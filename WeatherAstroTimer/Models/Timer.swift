@@ -15,9 +15,8 @@ struct DataSeries {
     let timepoint: Int
     let cloudcover: Int
     let seeing: Int
-    let wind10m: WindSpeed?
+    let wind10m: WindSpeed
     let temp2m: Int
-
 
     var description: String {
         """

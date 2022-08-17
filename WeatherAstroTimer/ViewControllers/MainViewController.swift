@@ -16,6 +16,8 @@ class MainViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchTimerAF()
+        weatherPiker.dataSource = self
+        weatherPiker.delegate = self
     }
 
     private var astroTimer: [Timer] = []
@@ -62,7 +64,7 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return astroTimer.description
+        return astroTimer.
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -79,16 +81,17 @@ extension MainViewController {
             .responseJSON { [weak self] dataResponse in
                 switch dataResponse.result {
                 case .success(let value):
-                    guard let timersData = value as? [String: Any] else { return }
+                    guard let timersData = value as? [String: [String: Any]] else { return }
                     for timerData in timersData {
                         let timer = Timer(
-                            product: timerData.value as? String ?? "",
-                            dataseries: timerData.value as? [DataSeries]
+                            product: <#T##String#>,
+                            dataseries: <#T##[DataSeries]?#>
                         )
                         self?.astroTimer.append(timer)
                         print(self?.astroTimer ?? "")
                     }
                     self?.successAlert()
+                    self?.weatherPiker.reloadAllComponents()
                 case .failure(let error):
                     print(error)
                 }
