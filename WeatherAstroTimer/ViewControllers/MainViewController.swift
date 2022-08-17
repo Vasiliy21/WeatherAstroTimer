@@ -79,11 +79,11 @@ extension MainViewController {
             .responseJSON { [weak self] dataResponse in
                 switch dataResponse.result {
                 case .success(let value):
-                    guard let timersData = value as? [[String: Any]] else { return }
+                    guard let timersData = value as? [String: Any] else { return }
                     for timerData in timersData {
                         let timer = Timer(
-                            product: timerData["product"] as? String ?? "",
-                            dataseries: timerData["dataseries"] as? [DataSeries] ?? [DataSeries(timepoint: 0, cloudcover: 0, seeing: 0, wind10m: WindSpeed.init(direction: "", speed: 0), temp2m: 0)]
+                            product: timerData.value as? String ?? "",
+                            dataseries: timerData.value as? [DataSeries]
                         )
                         self?.astroTimer.append(timer)
                         print(self?.astroTimer ?? "")

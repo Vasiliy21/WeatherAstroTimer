@@ -7,7 +7,7 @@
 
 struct Timer {
     let product: String
-    let dataseries: [DataSeries]
+    let dataseries: [DataSeries]?
 }
 
 
@@ -15,7 +15,7 @@ struct DataSeries {
     let timepoint: Int
     let cloudcover: Int
     let seeing: Int
-    let wind10m: WindSpeed
+    let wind10m: WindSpeed?
     let temp2m: Int
 
 
@@ -25,7 +25,7 @@ struct DataSeries {
         Температура: \(temp2m)
         Облачность: \(cloudcover)
         Видимость: \(seeing)
-        Скорость ветра: 
+        Скорость ветра: \(wind10m)
         """
     }
 }
