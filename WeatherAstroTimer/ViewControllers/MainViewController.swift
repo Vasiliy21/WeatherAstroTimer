@@ -15,7 +15,7 @@ class MainViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchTimerAF()
+        fetchTimer()
         weatherPiker.dataSource = self
         weatherPiker.delegate = self
     }
@@ -64,7 +64,7 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return astroTimer.
+        return astroTimer[row].dataseries[row].timepoint.description
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -75,28 +75,20 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 extension MainViewController {
-    private func fetchTimerAF() {
-        AF.request(Link.timerURL.rawValue)
-            .validate()
-            .responseJSON { [weak self] dataResponse in
-                switch dataResponse.result {
-                case .success(let value):
-                    guard let timersData = value as? [String: [String: Any]] else { return }
-                    for timerData in timersData {
-                        let timer = Timer(
-                            product: <#T##String#>,
-                            dataseries: <#T##[DataSeries]?#>
-                        )
-                        self?.astroTimer.append(timer)
-                        print(self?.astroTimer ?? "")
-                    }
-                    self?.successAlert()
-                    self?.weatherPiker.reloadAllComponents()
-                case .failure(let error):
-                    print(error)
-                }
+    private func fetchTimer() {
+        NetworkManager.shared.fetchTimer(from: Link.timerURL.rawValue) { [weak self] result in
+            switch result {
+            case .success(let timer):
+                self?.astroTimer.append(timer)
+                self?.weatherPiker.reloadAllComponents()
+                self?.successAlert()
+                print(self?.astroTimer)
+            case .failure(let error):
+                print(error.localizedDescription)
                 self?.failedAlert()
+
             }
+        }
     }
 }
 

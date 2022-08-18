@@ -5,13 +5,13 @@
 //  Created by Vasiliy on 13.08.2022.
 //
 
-struct Timer {
+struct Timer: Codable {
     let product: String
-    let dataseries: [DataSeries]?
+    let dataseries: [DataSeries]
 }
 
 
-struct DataSeries {
+struct DataSeries: Codable {
     let timepoint: Int
     let cloudcover: Int
     let seeing: Int
@@ -23,13 +23,13 @@ struct DataSeries {
         Погода через \(timepoint) будет:
         Температура: \(temp2m)
         Облачность: \(cloudcover)
-        Видимость: \(seeing)
         Скорость ветра: \(wind10m)
+        Видимость: \(seeing)
         """
     }
 }
 
-struct WindSpeed {
+struct WindSpeed: Codable {
     let direction: String
     let speed: Int
 }
